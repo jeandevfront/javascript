@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerador de Palavras Aleatórias em Português</title>
+</head>
+<body>
+    <h1>Palavra Aleatória:</h1>
+    <p id="randomWord">Clique no botão para gerar uma palavra aleatória em português.</p>
+    <button id="generateButton">Gerar Palavra</button>
+
+    <script>
+        function fetchRandomWord() {
+            // Faz uma solicitação para a API de palavras aleatórias em português
+            fetch('https://api.dicionario-aberto.net/random')
+                .then(response => response.json())
+                .then(data => {
+                    // Obtém a palavra aleatória da resposta
+                    const randomWord = data.word;
+                    document.getElementById("randomWord").textContent = randomWord;
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar palavra aleatória:', error);
+                });
+        }
+
+        // Associar a função ao evento de clique do botão
+        document.getElementById("generateButton").addEventListener("click", fetchRandomWord);
+    </script>
+</body>
+</html>

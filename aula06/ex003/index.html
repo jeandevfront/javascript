@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu primeiro programa...</title>
+    <style>
+    body {
+      background-color: rgb(105, 105, 173); /* Comentário em CSS */
+      color: white;
+      font: normal 20pt Arial;
+    }
+
+    h1 {
+      color: rgb(255, 212, 22);
+    }
+  </style>
+  </head>
+  <body>
+    <h1>Olá, mundo!</h1> <!--Comentário em HTML-->
+    <p>Já me livrei da maldição!!</p>
+    <script>
+      var n1 = Number(window.prompt("Digite um número")); // window.prompt sempre trata os dados como string
+      var n2 = Number(window.prompt('Digite outro número'));
+      var s = n1 + n2 
+      window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)
+      /* (number + number) para adição
+        (string + string) para concatenação
+        
+        Number.parseInt(n) -> serve para converter o dado para número inteiro.
+        Number.parseFloat(n) -> Serve também para converter o dado, porém para número real, inclui números com virgulas.
+        Number(n) -> faz o papel dos outros acima, mas o próprio JS se vira se é real ou inteiro.
+
+        String(n) -> converte o dado para string
+        n.toString() -> igual o de cima, mas o valor a ser convertido (n) vem no inicio.
+
+        */
+    </script>
+  </body>
+</html>

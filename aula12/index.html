@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      html,
+      input {
+        font-size: 20px;
+      }
+      #res, #res2, #res3 {
+        margin: 10px;
+      }
+    </style>
+
+    <title>Testando conhecimento</title>
+  </head>
+
+  <!-- 
+    //NÃO ESQUECER QUE O ID do getElementById PRECISA ESTAR ENTRE ASPAS
+  -->
+
+  <body>
+    <h1>Eu posso votar?</h1>
+    <p>Insira sua idade e verifique se pode ou não votar!</p>
+    <input type="number" name="txtn1" id="txtn1" placeholder="Insire aqui a sua idade"/>
+    <input type="button" value="Verificar" onclick="verificar()" />
+    <div id="res">
+    </div>
+    
+    <div id="res2">
+      <p><u>Hora da verificação</u></p>
+    </div>
+
+    <div id="res3">Seja bem-vindo!
+    </div>
+
+    <script>
+      function verificar() {
+        var tn1 = document.getElementById("txtn1"); //NÃO ESQUECER QUE O ID PRECISA ESTAR ENTRE ASPAS
+        var res = document.getElementById("res"); //NÃO ESQUECER QUE O ID PRECISA ESTAR ENTRE ASPAS
+        var n1 = Number(tn1.value);
+        if (n1 < 16) {
+          res.innerHTML = "Você tem " + n1 + " anos, <strong> não vota </strong>."; //Concatenando com +
+        } else if (n1 < 18 || n1 >= 65) {
+          res.innerHTML = `Você tem ${n1} anos, o voto é <strong> opcional </strong>.`; // Usando crase, interpolado usando o placeholder ${}
+        } else {
+          res.innerHTML = `Você tem ${n1} anos, o voto é <strong> obrigatório </strong>.`;
+        }
+        if (n1 > 120) {
+          res.innerHTML = "Você provavelmente está morto!";
+        }
+
+        var agora = new Date();
+        var hora = agora.getHours();
+        res2.innerHTML = `Agora são exatamente <u>${hora} hora(s)</u>.`;
+        if (hora >= 0 && hora < 6) {
+          res3.innerHTML = ("Boa madruga!");
+        } else if (hora < 12) {
+          res3.innerHTML = ("Bom dia!");
+        } else if (hora <= 18) {
+          res3.innerHTML = ("Boa tarde!");
+        } else if (hora <= 24) {
+          res3.innerHTML = ("Boa noite!");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nacionalidades</title>
+    <style>
+        body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+            background-color: rgb(102, 170, 230);
+        }
+
+        #txtt{
+            background-color: #fff;
+        }
+
+        .botao{
+            background-color: rgb(185, 154, 235);
+            color: rgb(80, 34, 3);
+            text-transform: uppercase;
+            border-radius: 40%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        ::placeholder{
+            color: black;
+            font-style: italic;
+        }
+
+        main{
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 14%;
+            border: 5px solid rgb(1, 231, 97);
+            box-shadow: 20px 12px 30px 0;
+        }
+    </style>
+  </head>
+  <body>
+    <main>
+        <h1>Nacionalidade</h1>
+    <p>Digite o país no qual nasceu.</p>
+    <input type="" id="txtt" placeholder="Digite aqui!" />
+    <p>
+      Verifique sua nacionalidade &#10145;
+      <input class="botao" type="button" value="Verificar" onclick="verificar()" />
+    </p>
+    <div id="res"></div>
+    </main>
+
+    <script>
+      function verificar() {
+        var txt = document.getElementById("txtt");
+        var res = document.getElementById("res");
+        var pais = txt.value;
+        res.innerHTML = `Você é `;
+        if (pais == "Brasil") {
+          res.innerHTML += `<strong>Brasileiro!</strong>`;
+        } else {
+          res.innerHTML += `Estrangeiro!`;
+        }
+      }
+    </script>
+  </body>
+</html>
